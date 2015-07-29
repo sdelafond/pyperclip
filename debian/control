@@ -1,11 +1,11 @@
 Source: python-pyperclip
 Section: python
 Priority: optional
-Maintainer: Sébastien Delafond <seb@debian.org>
-Build-Depends: debhelper (>= 9), python-dev, python3-dev, python-setuptools,
+Maintainer: Sebastien Delafond <seb@debian.org>
+Build-Depends: debhelper (>= 9), python-setuptools, python-all, python3-all,
  python3-setuptools, python-pytest, xclip, python-qt4, python3-pyqt4,
  xvfb, xauth
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: https://github.com/asweigart/pyperclip
 Vcs-Git: git://git.kali.org/packages/python-pyperclip.git
 Vcs-Browser: http://git.kali.org/gitweb/?p=packages/python-pyperclip.git;a=summary
@@ -24,8 +24,8 @@ Package: python3-pyperclip
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, xclip,
  python3-pyqt4
-Description: Cross-platform clipboard module for Python
- This module is a cross-platform Python module for copy and paste clipboard
+Description: Cross-platform clipboard module for Python3
+ This module is a cross-platform Python3 module for copy and paste clipboard
  functions. Currently only handles plaintext.
  .
  This is the Python 3 version of the package.
