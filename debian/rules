@@ -7,6 +7,6 @@ export PYBUILD_NAME=pyperclip
 
 override_dh_auto_test:
 	# run manually tests for python2
-	xvfb-run python tests/basicTests.py
+	xvfb-run python tests/test_copy_paste.py
 	# run manually tests for python3
-	xvfb-run python3 tests/basicTests.py
+	xvfb-run python3 tests/test_copy_paste.py
