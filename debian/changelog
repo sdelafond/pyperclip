@@ -1,3 +1,9 @@
+python-pyperclip (1.5.26-1) unstable; urgency=medium
+
+  * New upstream version 1.5.26 
+
+ -- Sebastien Delafond <seb@debian.org>  Wed, 10 Feb 2016 14:35:34 +0100
+
 python-pyperclip (1.5.24-1) unstable; urgency=medium
 
   * Correct Vcs-* urls
