@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: pyperclip
-Version: 1.5.25
+Version: 1.5.26
 Summary: A cross-platform clipboard module for Python. (only handles plain text for now)
 Home-page: https://github.com/asweigart/pyperclip
 Author: Al Sweigart
