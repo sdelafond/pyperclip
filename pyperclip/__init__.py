@@ -23,7 +23,7 @@ Otherwise on Linux, you will need the gtk or PyQt4 modules installed.
 gtk and PyQt4 modules are not available for Python 3,
 and this module does not work with PyGObject yet.
 """
-__version__ = '1.5.26'
+__version__ = '1.5.27'
 
 import platform
 import os
@@ -50,8 +50,10 @@ def determine_clipboard():
     # Determine the OS/platform and set
     # the copy() and paste() functions accordingly.
     if 'cygwin' in platform.system().lower():
-        return init_windows_clipboard(cygwin=True)
-    if os.name == 'nt' or platform.system() == 'Windows':
+        # FIXME: pyperclip currently does not support Cygwin,
+        # see https://github.com/asweigart/pyperclip/issues/55
+        pass
+    elif os.name == 'nt' or platform.system() == 'Windows':
         return init_windows_clipboard()
     if os.name == 'mac' or platform.system() == 'Darwin':
         return init_osx_clipboard()
