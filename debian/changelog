@@ -1,6 +1,6 @@
-python-pyperclip (1.5.27-1~2.gbpbf7445) UNRELEASED; urgency=medium
+python-pyperclip (1.5.27-1~3.gbpc63031) UNRELEASED; urgency=medium
 
-  ** SNAPSHOT build @bf7445953f8677386cd448d8a4dcf11c65c7c6af **
+  ** SNAPSHOT build @c63031e289cee8d8e819e0bd985a276db5f10743 **
 
   [ Sébastien Delafond ]
   * Imported Upstream version 1.5.24
@@ -14,6 +14,11 @@ python-pyperclip (1.5.27-1~2.gbpbf7445) UNRELEASED; urgency=medium
   [ Sébastien Delafond ]
   * snapshot
   * Disable python3 tests for now as they segfault
+
+  [ Sebastien Delafond ]
+
+  [ Sébastien Delafond ]
+  * snapshot
 
   [ Sebastien Delafond ]
 
