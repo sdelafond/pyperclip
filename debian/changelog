@@ -1,6 +1,6 @@
-python-pyperclip (1.5.27-1~1.gbp30bdaa) UNRELEASED; urgency=medium
+python-pyperclip (1.5.27-1~2.gbpbf7445) UNRELEASED; urgency=medium
 
-  ** SNAPSHOT build @30bdaad8633c58902cfed89f8ec81165f85e29e0 **
+  ** SNAPSHOT build @bf7445953f8677386cd448d8a4dcf11c65c7c6af **
 
   [ Sébastien Delafond ]
   * Imported Upstream version 1.5.24
@@ -8,6 +8,12 @@ python-pyperclip (1.5.27-1~1.gbp30bdaa) UNRELEASED; urgency=medium
   * Imported Upstream version 1.5.26
   * Update debian/watch to look for .zip files
   * Imported Upstream version 1.5.27
+
+  [ Sebastien Delafond ]
+
+  [ Sébastien Delafond ]
+  * snapshot
+  * Disable python3 tests for now as they segfault
 
   [ Sebastien Delafond ]
 
