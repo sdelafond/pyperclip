@@ -1,9 +1,15 @@
-python-pyperclip (1.5.27-2~1.gbp261ac5) UNRELEASED; urgency=medium
+python-pyperclip (1.5.27-2~2.gbp6c88e6) UNRELEASED; urgency=medium
 
-  ** SNAPSHOT build @261ac5e5e4033ef6fcb9786c66c44b864def01f0 **
+  ** SNAPSHOT build @6c88e63ece669b89a4a9bc7cfa0fe9a6c943f739 **
 
   [ Sébastien Delafond ]
   * Relax dependencies on python QT libraries (Closes: #816821)
+
+  [ Sebastien Delafond ]
+
+  [ Sébastien Delafond ]
+  * snapshot
+  * Do not run tests if DEB_BUILD_OPTIONS contains "nocheck" (Closes: #816815)
 
   [ Sebastien Delafond ]
 
