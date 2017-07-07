@@ -1,3 +1,9 @@
+python-pyperclip (1.5.27-3) unstable; urgency=medium
+
+  * Fix typo in Depends for python3 package (Closes: #867450)
+
+ -- Sebastien Delafond <seb@debian.org>  Fri, 07 Jul 2017 10:38:02 +0200
+
 python-pyperclip (1.5.27-2) unstable; urgency=medium
 
   * Relax dependencies on python QT libraries (Closes: #816821)
