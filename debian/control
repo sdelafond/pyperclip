@@ -20,7 +20,7 @@ Description: Cross-platform clipboard module for Python
 
 Package: python3-pyperclip
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, xclip | xsel | python3-pyqt4
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python3:Depends}, xclip | xsel | python3-pyqt4
 Description: Cross-platform clipboard module for Python3
  This module is a cross-platform Python3 module for copy and paste clipboard
  functions. Currently only handles plaintext.
