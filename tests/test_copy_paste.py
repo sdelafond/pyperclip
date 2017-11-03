@@ -9,12 +9,14 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from pyperclip import _executable_exists, HAS_DISPLAY
-from pyperclip.clipboards import (init_osx_clipboard,
+from pyperclip.clipboards import (init_osx_pbcopy_clipboard, init_osx_pyobjc_clipboard,
+                                  init_dev_clipboard_clipboard,
                                   init_gtk_clipboard, init_qt_clipboard,
                                   init_xclip_clipboard, init_xsel_clipboard,
                                   init_klipper_clipboard, init_no_clipboard)
 from pyperclip.windows import init_windows_clipboard
 
+random.seed(42)
 
 class _TestClipboard(unittest.TestCase):
     clipboard = None
@@ -55,6 +57,11 @@ class _TestClipboard(unittest.TestCase):
             raise unittest.SkipTest()
         self.copy(u"ಠ_ಠ")
 
+    def test_copy_unicode_emoji(self):
+        if not self.supports_unicode:
+            raise unittest.SkipTest()
+        self.copy(u"🙆")
+
     def test_copy_paste_unicode(self):
         if not self.supports_unicode:
             raise unittest.SkipTest()
@@ -62,10 +69,17 @@ class _TestClipboard(unittest.TestCase):
         self.copy(msg)
         self.assertEqual(self.paste(), msg)
 
+    def test_copy_paste_unicode_emoji(self):
+        if not self.supports_unicode:
+            raise unittest.SkipTest()
+        msg = u"🙆"
+        self.copy(msg)
+        self.assertEqual(self.paste(), msg)
+
 
 class TestCygwin(_TestClipboard):
     if 'cygwin' in platform.system().lower():
-        clipboard = init_windows_clipboard(True)
+        clipboard = init_dev_clipboard_clipboard()
 
 
 class TestWindows(_TestClipboard):
@@ -75,7 +89,13 @@ class TestWindows(_TestClipboard):
 
 class TestOSX(_TestClipboard):
     if os.name == 'mac' or platform.system() == 'Darwin':
-        clipboard = init_osx_clipboard()
+        try:
+            import Foundation  # check if pyobjc is installed
+            import AppKit
+        except ImportError:
+            clipboard = init_osx_pbcopy_clipboard() # TODO
+        else:
+            clipboard = init_osx_pyobjc_clipboard()
 
 
 class TestGtk(_TestClipboard):
@@ -91,9 +111,14 @@ class TestGtk(_TestClipboard):
 class TestQt(_TestClipboard):
     if HAS_DISPLAY:
         try:
-            import PyQt4
+            import PyQt5
         except ImportError:
-            pass
+            try:
+                import PyQt4
+            except ImportError:
+                pass
+            else:
+                clipboard = init_qt_clipboard()
         else:
             clipboard = init_qt_clipboard()
 
