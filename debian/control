@@ -4,10 +4,10 @@ Priority: optional
 Maintainer: Sebastien Delafond <seb@debian.org>
 Build-Depends: debhelper (>= 9), python-setuptools, python-all, python3-all,
  python3-setuptools, python-pytest, xclip, xvfb, xauth
-Standards-Version: 3.9.8
+Standards-Version: 4.1.1
 Homepage: https://github.com/asweigart/pyperclip
-Vcs-Git: git://anonscm.debian.org/collab-maint/python-pyperclip.git
-Vcs-Browser: http://anonscm.debian.org/git/collab-maint/python-pyperclip.git
+Vcs-Git: https://anonscm.debian.org/git/collab-maint/python-pyperclip.git
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/python-pyperclip.git
 X-Python-Version: >= 2.7
 X-Python3-Version: >= 3.4
 
@@ -16,13 +16,17 @@ Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, xclip | xsel | python-gtk2 | python-qt4
 Description: Cross-platform clipboard module for Python
  This module is a cross-platform Python module for copy and paste clipboard
- functions. Currently only handles plaintext.
+ functions.
+ .
+ It currently only handles plaintext.
 
 Package: python3-pyperclip
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${python3:Depends}, xclip | xsel | python3-pyqt4
 Description: Cross-platform clipboard module for Python3
  This module is a cross-platform Python3 module for copy and paste clipboard
- functions. Currently only handles plaintext.
+ functions.
+ .
+ It currently only handles plaintext.
  .
  This is the Python 3 version of the package.
