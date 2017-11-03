@@ -6,6 +6,7 @@ docs/index.rst
 docs/introduction.rst
 docs/make.bat
 pyperclip/__init__.py
+pyperclip/__main__.py
 pyperclip/clipboards.py
 pyperclip/exceptions.py
 pyperclip/windows.py

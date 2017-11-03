@@ -1,13 +1,13 @@
 Metadata-Version: 1.1
 Name: pyperclip
-Version: 1.5.27
+Version: 1.5.32
 Summary: A cross-platform clipboard module for Python. (only handles plain text for now)
 Home-page: https://github.com/asweigart/pyperclip
 Author: Al Sweigart
 Author-email: al@inventwithpython.com
 License: BSD
 Description: UNKNOWN
-Keywords: gui automation test testing keyboard mouse cursor click press keystroke control
+Keywords: clipboard copy paste clip xsel xclip
 Platform: UNKNOWN
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Environment :: Win32 (MS Windows)
@@ -26,3 +26,4 @@ Classifier: Programming Language :: Python :: 3.2
 Classifier: Programming Language :: Python :: 3.3
 Classifier: Programming Language :: Python :: 3.4
 Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
