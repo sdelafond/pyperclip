@@ -1,3 +1,12 @@
+python-pyperclip (1.6.0-1) unstable; urgency=medium
+
+  * New upstream version 1.6.0
+  * dos2unix pyperclip/*.py
+  * Use GTK+3 instead of GTK+2 (Closes: #884873).  Thanks to Corey Bryant
+    for the patch.
+
+ -- Sebastien Delafond <seb@debian.org>  Mon, 01 Jan 2018 14:58:23 +0100
+
 python-pyperclip (1.5.32-1) unstable; urgency=medium
 
   * New upstream version 1.5.32
