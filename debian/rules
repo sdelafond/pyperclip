@@ -8,7 +8,8 @@ export PYBUILD_NAME=pyperclip
 override_dh_auto_test:
 	# manually run tests for python2
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
-	xvfb-run python tests/test_copy_paste.py
+	# xvfb-run python tests/test_pyperclip.py
+	# xvfb-run python tests/test_single.py
 	# # run manually tests for python3
-	# xvfb-run python3 tests/test_copy_paste.py
+#	xvfb-run python3 tests/test_pyperclip.py
 endif
