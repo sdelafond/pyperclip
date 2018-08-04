@@ -9,9 +9,11 @@ Bug-Ubuntu: https://bugs.launchpad.net/bugs/1722553
 Origin: https://github.com/asweigart/pyperclip/pull/111
 Forwarded: yes
 
+diff --git a/pyperclip/__init__.py b/pyperclip/__init__.py
+index 3d701f5..9b5d35c 100644
 --- a/pyperclip/__init__.py
 +++ b/pyperclip/__init__.py
-@@ -20,12 +20,13 @@
+@@ -20,7 +20,8 @@ On Linux, install xclip or xsel via package manager. For example, in Debian:
      sudo apt-get install xclip
      sudo apt-get install xsel
  
@@ -21,21 +23,15 @@ Forwarded: yes
  
  gtk and PyQt4 modules are not available for Python 3,
  and this module does not work with PyGObject yet.
- 
--Note: There seem sto be a way to get gtk on Python 3, according to:
-+Note: There seems to be a way to get gtk on Python 3, according to:
-     https://askubuntu.com/questions/697397/python3-is-not-supporting-gtk-module
- 
- Cygwin is currently not supported.
-@@ -134,7 +135,6 @@
+@@ -141,7 +142,6 @@ def init_gtk_clipboard():
      import gtk
  
      def copy_gtk(text):
 -        global cb
+         text = _stringifyText(text) # Converts non-str values to str.
          cb = gtk.Clipboard()
          cb.set_text(text)
-         cb.store()
-@@ -150,6 +150,27 @@
+@@ -158,6 +158,28 @@ def init_gtk_clipboard():
      return copy_gtk, paste_gtk
  
  
@@ -46,6 +42,7 @@ Forwarded: yes
 +    cb = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
 +
 +    def copy_gi(text):
++        text = _stringifyText(text) # Converts non-str values to str.
 +        cb.set_text(text, -1)
 +        cb.store()
 +
@@ -63,7 +60,7 @@ Forwarded: yes
  def init_qt_clipboard():
      global QApplication
      # $DISPLAY should exist
-@@ -481,11 +502,18 @@
+@@ -519,11 +540,18 @@ def determine_clipboard():
      # Setup for the LINUX platform:
      if HAS_DISPLAY:
          try:
@@ -83,9 +80,9 @@ Forwarded: yes
 +                return init_gi_clipboard()
 +            pass
  
-         if _executable_exists("xclip"):
-             return init_xclip_clipboard()
-@@ -538,6 +566,7 @@
+         if _executable_exists("xsel"):
+             return init_xsel_clipboard()
+@@ -576,6 +604,7 @@ def set_clipboard(clipboard):
      clipboard_types = {'pbcopy': init_osx_pbcopy_clipboard,
                         'pyobjc': init_osx_pyobjc_clipboard,
                         'gtk': init_gtk_clipboard,
