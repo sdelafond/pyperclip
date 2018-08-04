@@ -1,3 +1,10 @@
+python-pyperclip (1.6.4-1) unstable; urgency=medium
+
+  * New upstream version 1.6.4
+  * Refresh gtk3 patch
+
+ -- Sebastien Delafond <seb@debian.org>  Sat, 04 Aug 2018 08:36:06 +0200
+
 python-pyperclip (1.6.2-1) unstable; urgency=medium
 
   * New upstream version 1.6.2
