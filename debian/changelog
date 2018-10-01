@@ -1,6 +1,7 @@
 python-pyperclip (1.6.4-2) UNRELEASED; urgency=medium
 
   * d/control: Remove ancient X-Python-Version field
+  * d/control: Remove ancient X-Python3-Version field
 
  -- Ondřej Nový <onovy@debian.org>  Mon, 01 Oct 2018 10:07:25 +0200
 
