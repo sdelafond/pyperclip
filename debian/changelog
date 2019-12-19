@@ -1,3 +1,9 @@
+python-pyperclip (1.6.4-3) unstable; urgency=medium
+
+  * Remove python2 package
+
+ -- Sebastien Delafond <seb@debian.org>  Thu, 19 Dec 2019 15:51:47 +0100
+
 python-pyperclip (1.6.4-2) unstable; urgency=medium
 
   [ Ondřej Nový ]
