@@ -1,7 +1,7 @@
 Source: python-pyperclip
 Section: python
 Priority: optional
-Maintainer: Sebastien Delafond <seb@debian.org>
+Maintainer: Debian QA Group <packages@qa.debian.org>
 Build-Depends: debhelper (>= 9), python-setuptools, python-all, python3-all,
  python3-setuptools, python-pytest, xclip, xvfb, xauth
 Standards-Version: 4.1.3
